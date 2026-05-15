@@ -459,11 +459,19 @@ export const defaultConfig = {
     ]
   },
   theme: {
-    accentColor: '#7CF5C8',
-    backgroundColor: '#08080f',
-    surfaceColor: '#13131f',
-    headingFont: 'Poppins, sans-serif',
-    bodyFont: 'Poppins, sans-serif'
+    accentColor:     '#378ADD',
+    accentColor2:    '#5DCAA5',
+    backgroundColor: '#1a1614',
+    bgAlt:           '#201a17',
+    surfaceColor:    '#251e1b',
+    surfaceAlt:      '#2e2522',
+    borderColor:     'rgba(255,245,240,0.07)',
+    textPrimary:     '#f5f0ec',
+    textSecondary:   'rgba(245,240,236,0.55)',
+    textMuted:       'rgba(245,240,236,0.30)',
+    headingFont: "'Plus Jakarta Sans', 'DM Sans', sans-serif",
+    bodyFont:    "'Inter', 'Helvetica Neue', sans-serif",
+    monoFont:    "'JetBrains Mono', 'Fira Code', monospace"
   },
   admin: {
     triggerKeyword: 'sudo',

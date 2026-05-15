@@ -1,5 +1,27 @@
 /* Base Styles and Variables */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;0,900;1,300&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap');
+
+/* Base Styles and Variables */
 :root {
+    --accent: #7CF5C8;
+    --accent2: #378ADD;
+    --bg: #08080f;
+    --bg2: #0d0d1a;
+    --surface: #13131f;
+    --surface2: #1a1a28;
+    --border: rgba(255, 255, 255, 0.07);
+    --text: #f0f0f0;
+    --text2: rgba(240, 240, 240, 0.55);
+    --text3: rgba(240, 240, 240, 0.30);
+    --font-head: 'Fraunces', Georgia, serif;
+    --font-body: 'Syne', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+    --radius: 14px;
+    --radius-sm: 8px;
+    --nav-h: 62px;
+    --admin-w: 480px;
+    --transition: 0.2s cubic-bezier(.4, 0, .2, 1);
+    /* Legacy mappings for compatibility */
     --primary-color: #7CF5C8;
     --secondary-color: #378ADD;
     --accent-color: #7CF5C8;
@@ -9,14 +31,10 @@
     --text-dark: #f0f0f0;
     --text-light: rgba(240, 240, 240, 0.55);
     --text-white: #f0f0f0;
-    --heading-font: 'Poppins', sans-serif;
-    --body-font: 'Poppins', sans-serif;
-    --border-radius: 10px;
+    --heading-font: 'Fraunces', Georgia, serif;
+    --body-font: 'Syne', sans-serif;
+    --border-radius: 14px;
     --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    --transition: all 0.3s ease;
-    --border: rgba(255, 255, 255, 0.07);
-    --text2: rgba(240, 240, 240, 0.55);
-    --text3: rgba(240, 240, 240, 0.3);
 }
 
 * {
@@ -30,10 +48,10 @@ html {
 }
 
 body {
-    font-family: var(--body-font);
+    font-family: var(--font-body);
     line-height: 1.6;
-    color: var(--text-dark);
-    background-color: var(--background-color);
+    color: var(--text);
+    background-color: var(--bg);
 }
 
 .container {
@@ -48,11 +66,12 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     line-height: 1.3;
     margin-bottom: 0.5em;
+    font-family: var(--font-head);
 }
 
 h1 {
     font-size: 2.5rem;
-    color: var(--text-white);
+    color: var(--text);
 }
 
 h2 {
@@ -69,12 +88,12 @@ p {
 
 a {
     text-decoration: none;
-    color: var(--primary-color);
+    color: var(--accent);
     transition: var(--transition);
 }
 
 a:hover {
-    color: var(--accent-color);
+    color: var(--accent2);
 }
 
 ul {
@@ -106,11 +125,11 @@ section {
 }
 
 section:nth-child(even) {
-    background-color: var(--background-color);
+    background-color: var(--bg);
 }
 
 section:nth-child(odd) {
-    background-color: var(--surface-color);
+    background-color: var(--bg2);
 }
 
 /* Buttons */
