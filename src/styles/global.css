@@ -1,19 +1,22 @@
 /* Base Styles and Variables */
 :root {
-    --primary-color: #4e54c8;
-    --secondary-color: #8f94fb;
-    --accent-color: #ff3366;
-    --background-color: #f8f9fa;
-    --surface-color: #ffffff;
-    --dark-bg: #343a40;
-    --text-dark: #212529;
-    --text-light: #6c757d;
-    --text-white: #ffffff;
+    --primary-color: #7CF5C8;
+    --secondary-color: #378ADD;
+    --accent-color: #7CF5C8;
+    --background-color: #08080f;
+    --surface-color: #13131f;
+    --dark-bg: #0d0d1a;
+    --text-dark: #f0f0f0;
+    --text-light: rgba(240, 240, 240, 0.55);
+    --text-white: #f0f0f0;
     --heading-font: 'Poppins', sans-serif;
     --body-font: 'Poppins', sans-serif;
     --border-radius: 10px;
     --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
+    --border: rgba(255, 255, 255, 0.07);
+    --text2: rgba(240, 240, 240, 0.55);
+    --text3: rgba(240, 240, 240, 0.3);
 }
 
 * {

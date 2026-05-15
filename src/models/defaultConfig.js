@@ -459,9 +459,9 @@ export const defaultConfig = {
     ]
   },
   theme: {
-    accentColor: '#4e54c8',
-    backgroundColor: '#f8f9fa',
-    surfaceColor: '#ffffff',
+    accentColor: '#7CF5C8',
+    backgroundColor: '#08080f',
+    surfaceColor: '#13131f',
     headingFont: 'Poppins, sans-serif',
     bodyFont: 'Poppins, sans-serif'
   },
