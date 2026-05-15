@@ -170,21 +170,72 @@ section:nth-child(odd) {
     transform: translateY(-3px);
 }
 
+/* Light Mode Theme */
+:root[data-theme="light"] {
+    --accent: #378ADD;
+    --accent2: #5DCAA5;
+    --bg: #ffffff;
+    --bg-alt: #f8f8f8;
+    --surface: #f0f0f0;
+    --surface-alt: #e8e8e8;
+    --border: rgba(0, 0, 0, 0.08);
+    --text: #1a1a1a;
+    --text-secondary: rgba(0, 0, 0, 0.65);
+    --text-muted: rgba(0, 0, 0, 0.40);
+    --font-head: 'Plus Jakarta Sans', 'DM Sans', sans-serif;
+    --font-body: 'Inter', 'Helvetica Neue', sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+    --radius: 14px;
+    --radius-sm: 8px;
+    --nav-h: 62px;
+    --admin-w: 480px;
+    --transition: 0.2s cubic-bezier(.4, 0, .2, 1);
+    --primary-color: #378ADD;
+    --secondary-color: #5DCAA5;
+    --accent-color: #378ADD;
+    --background-color: #ffffff;
+    --surface-color: #f0f0f0;
+    --dark-bg: #f8f8f8;
+    --text-dark: #1a1a1a;
+    --text-light: rgba(0, 0, 0, 0.65);
+    --text-white: #1a1a1a;
+    --heading-font: 'Plus Jakarta Sans', 'DM Sans', sans-serif;
+    --body-font: 'Inter', 'Helvetica Neue', sans-serif;
+    --border-radius: 14px;
+    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* System preference for light mode */
+@media (prefers-color-scheme: light) {
+    :root:not([data-theme]) {
+        --accent: #378ADD;
+        --accent2: #5DCAA5;
+        --bg: #ffffff;
+        --bg-alt: #f8f8f8;
+        --surface: #f0f0f0;
+        --surface-alt: #e8e8e8;
+        --border: rgba(0, 0, 0, 0.08);
+        --text: #1a1a1a;
+        --text-secondary: rgba(0, 0, 0, 0.65);
+        --text-muted: rgba(0, 0, 0, 0.40);
+    }
+}
+
 /* Responsive Styles */
 @media (max-width: 992px) {
     .hero-content {
         flex-direction: column-reverse;
         text-align: center;
     }
-    
+
     .cta-buttons {
         justify-content: center;
     }
-    
+
     .about-content, .contact-container {
         grid-template-columns: 1fr;
     }
-    
+
     .education-focus ul {
         grid-template-columns: 1fr;
     }
@@ -194,12 +245,46 @@ section:nth-child(odd) {
     h1 {
         font-size: 2rem;
     }
-    
+
     h2 {
         font-size: 1.5rem;
     }
-    
+
     section {
         padding: 60px 0;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    section {
+        padding: 40px 0;
+    }
+
+    .container {
+        width: 95%;
+        padding: 0 10px;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
     }
 }

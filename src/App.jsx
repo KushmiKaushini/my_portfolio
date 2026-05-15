@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { ThemeProvider } from './context/ThemeContext.jsx'
 import { ContentProvider, useContent } from './context/ContentContext.jsx'
 import Header from './components/Header'
 import Hero from './components/Hero'
@@ -72,9 +73,11 @@ function AppShell() {
 
 function App() {
   return (
-    <ContentProvider>
-      <AppShell />
-    </ContentProvider>
+    <ThemeProvider>
+      <ContentProvider>
+        <AppShell />
+      </ContentProvider>
+    </ThemeProvider>
   )
 }
 

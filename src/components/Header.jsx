@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
+import { useTheme } from '../context/ThemeContext.jsx'
 import '../styles/header.css'
 
 function Header({ activeSection, scrollToSection }) {
   const [menuOpen, setMenuOpen] = useState(false)
+  const { theme, toggleTheme } = useTheme()
 
   const navLinks = [
     { id: 'home', label: 'Home' },
@@ -50,8 +52,13 @@ function Header({ activeSection, scrollToSection }) {
               ))}
             </ul>
           </nav>
-          <div className="menu-toggle" onClick={handleMenuToggle}>
-            <i className="fas fa-bars"></i>
+          <div className="header-controls">
+            <button className="theme-toggle" onClick={toggleTheme} title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}>
+              <i className={`fas fa-${theme === 'dark' ? 'sun' : 'moon'}`}></i>
+            </button>
+            <div className="menu-toggle" onClick={handleMenuToggle}>
+              <i className="fas fa-bars"></i>
+            </div>
           </div>
         </div>
       </div>
