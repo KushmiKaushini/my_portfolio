@@ -65,9 +65,16 @@ export async function resetConfig() {
 
 export async function initializeAdmin() {
   const adminRecord = await indexedDB.getAdminCredentials()
+  const usernameHash = await hashText(defaultConfig.admin.defaultUsername)
+  const passwordHash = await hashText(defaultConfig.admin.defaultPassword)
+
   if (!adminRecord) {
-    const usernameHash = await hashText(defaultConfig.admin.defaultUsername)
-    const passwordHash = await hashText(defaultConfig.admin.defaultPassword)
+    await indexedDB.setAdminCredentials({ usernameHash, passwordHash })
+    return
+  }
+
+  // If the default credentials changed in code, overwrite stale stored hashes.
+  if (adminRecord.usernameHash !== usernameHash || adminRecord.passwordHash !== passwordHash) {
     await indexedDB.setAdminCredentials({ usernameHash, passwordHash })
   }
 }
