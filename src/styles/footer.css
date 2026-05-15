@@ -1,7 +1,7 @@
 /* Footer */
 footer {
-    background-color: var(--dark-bg);
-    color: var(--text-white);
+    background-color: var(--bg);
+    color: var(--text);
     padding: 40px 0;
 }
 
@@ -15,7 +15,7 @@ footer {
 .footer-logo {
     font-size: 2rem;
     font-weight: 700;
-    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(to right, var(--accent), var(--accent2));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -33,18 +33,18 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: var(--text-white);
+    background-color: rgba(245, 240, 236, 0.1);
+    color: var(--text);
     transition: var(--transition);
 }
 
 .footer-social a:hover {
     transform: translateY(-3px);
-    background-color: var(--primary-color);
+    background-color: var(--accent);
 }
 
 .footer-copyright {
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--text-secondary);
     text-align: center;
 }

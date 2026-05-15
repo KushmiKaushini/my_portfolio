@@ -1,40 +1,41 @@
-/* Base Styles and Variables */
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;0,900;1,300&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap');
+/* Base Styles and Variables - Synced with defaultConfig.js */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap');
 
-/* Base Styles and Variables */
 :root {
-    --accent: #7CF5C8;
-    --accent2: #378ADD;
-    --bg: #08080f;
-    --bg2: #0d0d1a;
-    --surface: #13131f;
-    --surface2: #1a1a28;
-    --border: rgba(255, 255, 255, 0.07);
-    --text: #f0f0f0;
-    --text2: rgba(240, 240, 240, 0.55);
-    --text3: rgba(240, 240, 240, 0.30);
-    --font-head: 'Fraunces', Georgia, serif;
-    --font-body: 'Syne', sans-serif;
-    --font-mono: 'DM Mono', monospace;
+    /* Primary theme colors from defaultConfig */
+    --accent: #378ADD;
+    --accent2: #5DCAA5;
+    --bg: #1a1614;
+    --bg-alt: #201a17;
+    --surface: #251e1b;
+    --surface-alt: #2e2522;
+    --border: rgba(255,245,240,0.07);
+    --text: #f5f0ec;
+    --text-secondary: rgba(245,240,236,0.55);
+    --text-muted: rgba(245,240,236,0.30);
+    --font-head: 'Plus Jakarta Sans', 'DM Sans', sans-serif;
+    --font-body: 'Inter', 'Helvetica Neue', sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
     --radius: 14px;
     --radius-sm: 8px;
     --nav-h: 62px;
     --admin-w: 480px;
     --transition: 0.2s cubic-bezier(.4, 0, .2, 1);
-    /* Legacy mappings for compatibility */
-    --primary-color: #7CF5C8;
-    --secondary-color: #378ADD;
-    --accent-color: #7CF5C8;
-    --background-color: #08080f;
-    --surface-color: #13131f;
-    --dark-bg: #0d0d1a;
-    --text-dark: #f0f0f0;
-    --text-light: rgba(240, 240, 240, 0.55);
-    --text-white: #f0f0f0;
-    --heading-font: 'Fraunces', Georgia, serif;
-    --body-font: 'Syne', sans-serif;
+
+    /* Legacy mappings for compatibility with old styles */
+    --primary-color: #378ADD;
+    --secondary-color: #5DCAA5;
+    --accent-color: #378ADD;
+    --background-color: #1a1614;
+    --surface-color: #251e1b;
+    --dark-bg: #201a17;
+    --text-dark: #f5f0ec;
+    --text-light: rgba(245,240,236,0.55);
+    --text-white: #f5f0ec;
+    --heading-font: 'Plus Jakarta Sans', 'DM Sans', sans-serif;
+    --body-font: 'Inter', 'Helvetica Neue', sans-serif;
     --border-radius: 14px;
-    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 * {
@@ -129,7 +130,7 @@ section:nth-child(even) {
 }
 
 section:nth-child(odd) {
-    background-color: var(--bg2);
+    background-color: var(--bg-alt);
 }
 
 /* Buttons */
