@@ -3,11 +3,14 @@
     --primary-color: #4e54c8;
     --secondary-color: #8f94fb;
     --accent-color: #ff3366;
-    --light-bg: #f8f9fa;
+    --background-color: #f8f9fa;
+    --surface-color: #ffffff;
     --dark-bg: #343a40;
     --text-dark: #212529;
     --text-light: #6c757d;
     --text-white: #ffffff;
+    --heading-font: 'Poppins', sans-serif;
+    --body-font: 'Poppins', sans-serif;
     --border-radius: 10px;
     --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
@@ -24,10 +27,10 @@ html {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--body-font);
     line-height: 1.6;
     color: var(--text-dark);
-    background-color: var(--light-bg);
+    background-color: var(--background-color);
 }
 
 .container {
@@ -100,11 +103,11 @@ section {
 }
 
 section:nth-child(even) {
-    background-color: var(--light-bg);
+    background-color: var(--background-color);
 }
 
 section:nth-child(odd) {
-    background-color: #ffffff;
+    background-color: var(--surface-color);
 }
 
 /* Buttons */

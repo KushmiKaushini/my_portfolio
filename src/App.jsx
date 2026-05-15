@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import { ContentProvider, useContent } from './context/ContentContext.jsx'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -8,9 +9,14 @@ import Education from './components/Education'
 import Strengths from './components/Strengths'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import KeyboardTriggerListener from './components/KeyboardTriggerListener.jsx'
+import AdminModal from './components/admin/AdminModal.jsx'
+import AdminPanel from './components/admin/AdminPanel.jsx'
+import './styles/admin.css'
 
-function App() {
+function AppShell() {
   const [activeSection, setActiveSection] = useState('home')
+  const { adminOpen, adminAuthenticated, adminError, openAdmin, closeAdmin, verifyAdmin } = useContent()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,15 +43,13 @@ function App() {
     const element = document.getElementById(sectionId)
     if (element) {
       const offsetPosition = element.offsetTop - 80
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      })
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
     }
   }
 
   return (
     <div className="App">
+      <KeyboardTriggerListener />
       <Header activeSection={activeSection} scrollToSection={scrollToSection} />
       <Hero scrollToSection={scrollToSection} />
       <About />
@@ -55,7 +59,22 @@ function App() {
       <Strengths />
       <Contact />
       <Footer />
+      <AdminModal
+        isOpen={adminOpen}
+        onClose={closeAdmin}
+        onAuthenticate={verifyAdmin}
+        authError={adminError}
+      />
+      {adminAuthenticated && <AdminPanel />}
     </div>
+  )
+}
+
+function App() {
+  return (
+    <ContentProvider>
+      <AppShell />
+    </ContentProvider>
   )
 }
 
