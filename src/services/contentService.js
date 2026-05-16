@@ -2,6 +2,12 @@ import { defaultConfig } from '../models/defaultConfig'
 import * as indexedDB from './indexedDB.js'
 import { hashText } from './crypto.js'
 
+// Use environment variables for admin credentials if available
+const adminConfig = defaultConfig.admin
+// Get credentials from environment or fallback to config
+const ADMIN_USERNAME = import.meta.env.VITE_ADMIN_USERNAME || adminConfig.defaultUsername
+const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD || adminConfig.defaultPassword
+
 const SECTION_KEYS = Object.keys(defaultConfig)
 
 function mergeSection(defaultValue, storedValue) {
@@ -65,8 +71,9 @@ export async function resetConfig() {
 
 export async function initializeAdmin() {
   const adminRecord = await indexedDB.getAdminCredentials()
-  const usernameHash = await hashText(defaultConfig.admin.defaultUsername)
-  const passwordHash = await hashText(defaultConfig.admin.defaultPassword)
+  // Use stored hashes or create new ones from environment/config
+  const usernameHash = await hashText(ADMIN_USERNAME)
+  const passwordHash = await hashText(ADMIN_PASSWORD)
 
   if (!adminRecord) {
     await indexedDB.setAdminCredentials({ usernameHash, passwordHash })
@@ -85,4 +92,12 @@ export async function verifyAdminLogin(username, password) {
   const usernameHash = await hashText(username)
   const passwordHash = await hashText(password)
   return credentials.usernameHash === usernameHash && credentials.passwordHash === passwordHash
+}
+
+// Helper to get admin config
+export function getAdminConfig() {
+  return {
+    triggerKeyword: adminConfig.triggerKeyword,
+    defaultUsername: ADMIN_USERNAME
+  }
 }

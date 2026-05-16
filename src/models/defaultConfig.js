@@ -23,7 +23,7 @@ export const defaultConfig = {
       { id: 'contact', label: 'Contact Me', target: 'contact', type: 'secondary' }
     ],
     avatarEmoji: '👩‍💻',
-    imageUrl: 'https://raw.githubusercontent.com/KushmiKaushini/my_portfolio/main/profile.jpg',
+    imageUrl: 'src/assets/profile.jpg',
     order: 1
   },
   about: {

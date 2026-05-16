@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMobileAlt, faEnvelope, faPhone, faGithub, faLinkedin, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
+import { faGithub as faGithubBrands, faLinkedin as faLinkedinBrands, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'
 import '../styles/hero.css'
 
 function Hero({ scrollToSection }) {
