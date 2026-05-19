@@ -2,7 +2,16 @@
   "permissions": {
     "allow": [
       "Bash(npm run *)",
-      "Bash(npm install *)"
+      "Bash(npm install *)",
+      "Bash(Remove-Item -Recurse -Force legacy)",
+      "Bash(npx vite *)",
+      "Bash(curl -s \"http://localhost:3002\")",
+      "Bash(curl -s \"http://localhost:3002/src/main.jsx\")",
+      "Bash(curl -s \"http://localhost:3002/src/services/contentService.js\")",
+      "Bash(curl *)",
+      "Bash(netstat -ano)",
+      "Bash(findstr :3002)",
+      "Bash(taskkill *)"
     ]
   }
 }

@@ -2,17 +2,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap');
 
 :root {
-    /* Primary theme colors from defaultConfig */
-    --accent: #378ADD;
-    --accent2: #5DCAA5;
-    --bg: #1a1614;
-    --bg-alt: #201a17;
-    --surface: #251e1b;
-    --surface-alt: #2e2522;
-    --border: rgba(255,245,240,0.07);
-    --text: #f5f0ec;
-    --text-secondary: rgba(245,240,236,0.55);
-    --text-muted: rgba(245,240,236,0.30);
+    /* Primary theme colors - Dark Blue with Ocean Green & White */
+    --accent: #20b2aa;
+    --accent2: #17a2b8;
+    --bg: #0a1e3a;
+    --bg-alt: #112847;
+    --surface: #1a3a52;
+    --surface-alt: #23475f;
+    --border: rgba(255,255,255,0.1);
+    --text: #ffffff;
+    --text-secondary: rgba(255,255,255,0.75);
+    --text-muted: rgba(255,255,255,0.50);
     --font-head: 'Plus Jakarta Sans', 'DM Sans', sans-serif;
     --font-body: 'Inter', 'Helvetica Neue', sans-serif;
     --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
@@ -23,19 +23,19 @@
     --transition: 0.2s cubic-bezier(.4, 0, .2, 1);
 
     /* Legacy mappings for compatibility with old styles */
-    --primary-color: #378ADD;
-    --secondary-color: #5DCAA5;
-    --accent-color: #378ADD;
-    --background-color: #1a1614;
-    --surface-color: #251e1b;
-    --dark-bg: #201a17;
-    --text-dark: #f5f0ec;
-    --text-light: rgba(245,240,236,0.55);
-    --text-white: #f5f0ec;
+    --primary-color: #20b2aa;
+    --secondary-color: #17a2b8;
+    --accent-color: #20b2aa;
+    --background-color: #0a1e3a;
+    --surface-color: #1a3a52;
+    --dark-bg: #112847;
+    --text-dark: #ffffff;
+    --text-light: rgba(255,255,255,0.75);
+    --text-white: #ffffff;
     --heading-font: 'Plus Jakarta Sans', 'DM Sans', sans-serif;
     --body-font: 'Inter', 'Helvetica Neue', sans-serif;
     --border-radius: 14px;
-    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 * {
@@ -172,16 +172,16 @@ section:nth-child(odd) {
 
 /* Light Mode Theme */
 :root[data-theme="light"] {
-    --accent: #378ADD;
-    --accent2: #5DCAA5;
-    --bg: #ffffff;
-    --bg-alt: #f8f8f8;
-    --surface: #f0f0f0;
-    --surface-alt: #e8e8e8;
-    --border: rgba(0, 0, 0, 0.08);
-    --text: #1a1a1a;
-    --text-secondary: rgba(0, 0, 0, 0.65);
-    --text-muted: rgba(0, 0, 0, 0.40);
+    --accent: #20b2aa;
+    --accent2: #17a2b8;
+    --bg: #f5f9fb;
+    --bg-alt: #e8f0f3;
+    --surface: #dde8ed;
+    --surface-alt: #cfe1e9;
+    --border: rgba(10, 30, 58, 0.1);
+    --text: #0a1e3a;
+    --text-secondary: rgba(10, 30, 58, 0.75);
+    --text-muted: rgba(10, 30, 58, 0.50);
     --font-head: 'Plus Jakarta Sans', 'DM Sans', sans-serif;
     --font-body: 'Inter', 'Helvetica Neue', sans-serif;
     --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
@@ -190,34 +190,34 @@ section:nth-child(odd) {
     --nav-h: 62px;
     --admin-w: 480px;
     --transition: 0.2s cubic-bezier(.4, 0, .2, 1);
-    --primary-color: #378ADD;
-    --secondary-color: #5DCAA5;
-    --accent-color: #378ADD;
-    --background-color: #ffffff;
-    --surface-color: #f0f0f0;
-    --dark-bg: #f8f8f8;
-    --text-dark: #1a1a1a;
-    --text-light: rgba(0, 0, 0, 0.65);
-    --text-white: #1a1a1a;
+    --primary-color: #20b2aa;
+    --secondary-color: #17a2b8;
+    --accent-color: #20b2aa;
+    --background-color: #f5f9fb;
+    --surface-color: #dde8ed;
+    --dark-bg: #e8f0f3;
+    --text-dark: #0a1e3a;
+    --text-light: rgba(10, 30, 58, 0.75);
+    --text-white: #0a1e3a;
     --heading-font: 'Plus Jakarta Sans', 'DM Sans', sans-serif;
     --body-font: 'Inter', 'Helvetica Neue', sans-serif;
     --border-radius: 14px;
-    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    --box-shadow: 0 5px 15px rgba(10, 30, 58, 0.1);
 }
 
 /* System preference for light mode */
 @media (prefers-color-scheme: light) {
     :root:not([data-theme]) {
-        --accent: #378ADD;
-        --accent2: #5DCAA5;
-        --bg: #ffffff;
-        --bg-alt: #f8f8f8;
-        --surface: #f0f0f0;
-        --surface-alt: #e8e8e8;
-        --border: rgba(0, 0, 0, 0.08);
-        --text: #1a1a1a;
-        --text-secondary: rgba(0, 0, 0, 0.65);
-        --text-muted: rgba(0, 0, 0, 0.40);
+        --accent: #20b2aa;
+        --accent2: #17a2b8;
+        --bg: #f5f9fb;
+        --bg-alt: #e8f0f3;
+        --surface: #dde8ed;
+        --surface-alt: #cfe1e9;
+        --border: rgba(10, 30, 58, 0.1);
+        --text: #0a1e3a;
+        --text-secondary: rgba(10, 30, 58, 0.75);
+        --text-muted: rgba(10, 30, 58, 0.50);
     }
 }
 

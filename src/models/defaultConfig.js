@@ -475,8 +475,6 @@ export const defaultConfig = {
   },
   admin: {
     triggerKeyword: 'sudo',
-    loginPrompt: 'Type sudo on the page to open admin',
-    defaultUsername: 'Kushmi',
-    defaultPassword: 'Kushmi@2001'
+    loginPrompt: 'Type sudo on the page to open admin'
   }
 }

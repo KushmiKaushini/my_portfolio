@@ -1,12 +1,17 @@
-import { defaultConfig } from '../models/defaultConfig'
+import { defaultConfig } from '../models/defaultConfig.js'
 import * as indexedDB from './indexedDB.js'
 import { hashText } from './crypto.js'
 
-// Use environment variables for admin credentials if available
-const adminConfig = defaultConfig.admin
-// Get credentials from environment or fallback to config
-const ADMIN_USERNAME = import.meta.env.VITE_ADMIN_USERNAME || adminConfig.defaultUsername
-const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD || adminConfig.defaultPassword
+// Get credentials from environment variables
+const ADMIN_USERNAME = import.meta.env.VITE_ADMIN_USERNAME
+const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD
+
+if (!ADMIN_USERNAME || !ADMIN_PASSWORD) {
+  console.warn('Admin credentials not configured. Admin panel will not work.')
+}
+
+// Get admin config from environment
+const ADMIN_TRIGGER_KEYWORD = import.meta.env.VITE_ADMIN_TRIGGER_KEYWORD || defaultConfig.admin.triggerKeyword
 
 const SECTION_KEYS = Object.keys(defaultConfig)
 
@@ -97,7 +102,7 @@ export async function verifyAdminLogin(username, password) {
 // Helper to get admin config
 export function getAdminConfig() {
   return {
-    triggerKeyword: adminConfig.triggerKeyword,
-    defaultUsername: ADMIN_USERNAME
+    triggerKeyword: ADMIN_TRIGGER_KEYWORD,
+    username: ADMIN_USERNAME
   }
 }
