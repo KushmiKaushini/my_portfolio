@@ -21,8 +21,8 @@ function Education() {
       <div className="container">
         <h2 className="section-title">Education</h2>
 
+        {/* 1. Academic Timeline Section */}
         <div className="education-timeline">
-
           {/* Degree */}
           <div className="education-card primary">
             <div className="education-icon">
@@ -35,6 +35,7 @@ function Education() {
               <p className="education-date">
                 <i className="fas fa-calendar-alt"></i> 2022 – Present &nbsp;|&nbsp; Expected Graduation: 2027
               </p>
+              
               <div className="education-specialization">
                 <p className="edu-label">Specialization</p>
                 <div className="edu-tags">
@@ -44,6 +45,7 @@ function Education() {
                   <span>AI Applications</span>
                 </div>
               </div>
+
               <div className="education-focus">
                 <p className="edu-label">Relevant Coursework</p>
                 <ul>
@@ -75,7 +77,7 @@ function Education() {
           </div>
         </div>
 
-        {/* Certifications */}
+        {/* 2. Certifications Grid Section */}
         <div className="certifications-section">
           <h3 className="subsection-title">
             <i className="fas fa-certificate"></i> Certifications
@@ -93,7 +95,7 @@ function Education() {
           </div>
         </div>
 
-        {/* Achievements */}
+        {/* 3. Achievements Section */}
         <div className="achievements-section">
           <h3 className="subsection-title">
             <i className="fas fa-trophy"></i> Achievements

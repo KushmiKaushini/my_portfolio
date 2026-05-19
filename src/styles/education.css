@@ -1,6 +1,7 @@
 /* Education Section */
 .education-card {
-    background-color: var(--surface);
+    /* Ensure your --surface variable is set to a dark color or matching the card below */
+    background-color: var(--surface); 
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     padding: 30px;
@@ -9,6 +10,7 @@
     transition: var(--transition);
     max-width: 800px;
     margin: 0 auto;
+    text-align: left; /* Ensures text stays aligned properly */
 }
 
 .education-card:hover {
@@ -18,14 +20,17 @@
 
 .education-icon {
     font-size: 2.5rem;
-    color: var(--accent);
+    color: var(--accent); /* Accent is great for small highlights like icons! */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .education-details h3 {
-    color: var(--accent);
+    /* FIX: Changed from var(--accent) to var(--text) or a bright white/off-white */
+    color: var(--text); 
+    font-size: 1.4rem;
+    font-weight: 600;
     margin-bottom: 5px;
 }
 
@@ -37,8 +42,10 @@
 
 .education-date {
     font-size: 0.9rem;
-    color: var(--accent2);
+    /* FIX: Ensured this uses a readable muted color, or var(--accent) if background is dark */
+    color: var(--text-secondary); 
     margin-bottom: 15px;
+    opacity: 0.8;
 }
 
 .education-focus {
@@ -47,26 +54,28 @@
 
 .education-focus p {
     font-weight: 500;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     color: var(--text);
 }
 
 .education-focus ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 5px;
+    gap: 8px;
+    list-style: none; /* Removes default bullets since you make custom ones */
+    padding: 0;
 }
 
 .education-focus ul li {
     font-size: 0.9rem;
     position: relative;
-    padding-left: 15px;
+    padding-left: 20px;
     color: var(--text-secondary);
 }
 
 .education-focus ul li::before {
-    content: "•";
-    color: var(--accent);
+    content: "✓"; /* Changed to a checkmark to match your image design! */
+    color: var(--accent); /* The checkmark will beautifully pop in teal */
     font-weight: bold;
     position: absolute;
     left: 0;
@@ -79,7 +88,6 @@
     gap: 30px;
     margin-bottom: 60px;
 }
-
 /* Certifications Section */
 .certifications-section {
     margin-top: 60px;
