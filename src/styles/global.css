@@ -7,7 +7,7 @@
     --accent2: #17a2b8;
     --bg: #0a1e3a;
     --bg-alt: #112847;
-    --surface: #1a3a52;
+    --surface: #050235;
     --surface-alt: #23475f;
     --border: rgba(255,255,255,0.1);
     --text: #ffffff;
@@ -23,12 +23,12 @@
     --transition: 0.2s cubic-bezier(.4, 0, .2, 1);
 
     /* Legacy mappings for compatibility with old styles */
-    --primary-color: #20b2aa;
-    --secondary-color: #17a2b8;
-    --accent-color: #20b2aa;
+    --primary-color: #040842;
+    --secondary-color: #000361;
+    --accent-color: #020442;
     --background-color: #0a1e3a;
-    --surface-color: #1a3a52;
-    --dark-bg: #112847;
+    --surface-color: #051362;
+    --dark-bg: rgb(12, 21, 93);
     --text-dark: #ffffff;
     --text-light: rgba(255,255,255,0.75);
     --text-white: #ffffff;
@@ -117,7 +117,7 @@ ul {
     transform: translateX(-50%);
     width: 60px;
     height: 4px;
-    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    background: var(--accent);
     border-radius: 2px;
 }
 
@@ -147,9 +147,9 @@ section:nth-child(odd) {
 }
 
 .primary {
-    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    background: var(--accent);
     color: var(--text-white);
-    box-shadow: 0 4px 15px rgba(78, 84, 200, 0.4);
+    box-shadow: 0 4px 15px rgba(32, 178, 170, 0.4);
 }
 
 .primary:hover {

@@ -2,7 +2,7 @@
 .hero {
     height: 100vh;
     min-height: 600px;
-    background: linear-gradient(-45deg, var(--primary-color), var(--secondary-color));
+    background: var(--accent);
     display: flex;
     align-items: center;
     color: var(--text-white);
