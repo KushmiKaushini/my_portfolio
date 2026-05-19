@@ -1,12 +1,64 @@
-/* Projects Section */
+/* ==========================================================================
+   1. Missing Filter Row & Tab Button Styling (Fixed!)
+   ========================================================================== */
+.project-filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 35px auto 55px auto;
+    padding: 0 20px;
+    max-width: 1000px;
+}
+
+/* Styled filter buttons */
+.project-filters .filter-btn {
+    background-color: rgba(255, 255, 255, 0.03);
+    color: var(--text-secondary, #94a3b8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 22px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: inherit;
+    border-radius: var(--border-radius, 8px);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    outline: none;
+}
+
+/* Hover Action */
+.project-filters .filter-btn:hover {
+    color: var(--accent, #14b8a6);
+    border-color: var(--accent, #14b8a6);
+    background-color: rgba(20, 184, 166, 0.05);
+    transform: translateY(-2px);
+}
+
+/* Active Highlight Filter */
+.project-filters .filter-btn.active {
+    background-color: var(--accent, #14b8a6);
+    color: #0f172a; /* Deep contrast dark text for active tab */
+    border-color: var(--accent, #14b8a6);
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(20, 184, 166, 0.3);
+}
+
+/* ==========================================================================
+   2. Projects Grid & 3D Card Setup
+   ========================================================================== */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .project-card {
-    height: 280px;
+    height: 380px; /* Increased from 280px to safely contain your detailed descriptions */
+    perspective: 1000px; /* Establishes structural 3D perspective space */
     cursor: pointer;
 }
 
@@ -14,7 +66,7 @@
     position: relative;
     width: 100%;
     height: 100%;
-    transition: transform 0.8s;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     transform-style: preserve-3d;
 }
 
@@ -28,85 +80,110 @@
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    border-radius: var(--border-radius);
-    padding: 25px;
+    border-radius: var(--border-radius, 12px);
+    padding: 30px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    box-sizing: border-box;
 }
 
+/* --- CARD FRONT --- */
 .project-front {
-    background-color: var(--surface);
+    background-color: var(--surface, #1e293b);
     box-shadow: var(--box-shadow);
-    color: var(--text);
-}
-
-.project-back {
-    background: linear-gradient(to right, var(--accent), var(--accent2));
-    color: var(--text);
-    transform: rotateY(180deg);
-    display: flex;
-    flex-direction: column;
+    color: var(--text, #f8fafc);
+    border: 1px solid rgba(255, 255, 255, 0.03);
     justify-content: space-between;
+    align-items: flex-start; /* Left aligned layout looks cleaner for technical data */
     text-align: left;
 }
 
 .project-icon {
-    font-size: 2.5rem;
-    color: var(--accent);
-    margin-bottom: 15px;
+    font-size: 2.2rem;
+    color: var(--accent, #14b8a6);
+    margin-bottom: 5px;
+}
+
+.project-category-badge {
+    background-color: rgba(20, 184, 166, 0.1);
+    color: var(--accent, #14b8a6);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    margin-top: 10px;
 }
 
 .project-front h3 {
-    margin-bottom: 5px;
-    color: var(--text);
+    font-size: 1.3rem;
+    margin: 15px 0 5px 0;
+    color: var(--text, #f8fafc);
 }
 
 .project-front p {
-    color: var(--text-secondary);
+    color: var(--text-secondary, #94a3b8);
+    font-size: 0.95rem;
+    margin: 0;
+    flex-grow: 1;
 }
 
-.view-details, .back-to-card {
+.view-details {
     margin-top: 15px;
-    color: var(--accent2);
-    font-weight: 500;
-    cursor: pointer;
-    position: relative;
+    color: var(--accent, #14b8a6);
+    font-size: 0.85rem;
+    font-weight: 600;
     display: inline-block;
 }
 
-.view-details::after, .back-to-card::after {
-    content: '';
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: currentColor;
-    transition: var(--transition);
+/* --- CARD BACK (Premium Dark Look + Scrollable Stack Support) --- */
+.project-back {
+    background-color: #151f32; /* Rich elegant dark tone so text remains incredibly readable */
+    border: 1px solid var(--accent, #14b8a6); /* Keeps the card back aligned with theme accent */
+    color: var(--text, #f8fafc);
+    transform: rotateY(180deg);
+    justify-content: flex-start;
+    text-align: left;
+    overflow-y: auto; /* Scroll fallback keeps massive toolchains completely readable */
 }
 
-.view-details:hover::after, .back-to-card:hover::after {
-    width: 100%;
+/* Custom minimal scrollbar for text-heavy card backs */
+.project-back::-webkit-scrollbar {
+    width: 4px;
+}
+.project-back::-webkit-scrollbar-thumb {
+    background: var(--accent, #14b8a6);
+    border-radius: 10px;
 }
 
 .project-back h3 {
-    margin-bottom: 10px;
-    font-size: 1.3rem;
+    font-size: 1.15rem;
+    margin: 0 0 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 8px;
+    color: var(--text, #f8fafc);
 }
 
 .project-back p {
-    font-size: 0.9rem;
-    margin-bottom: 5px;
+    font-size: 0.85rem;
+    color: var(--text-secondary, #94a3b8);
+    margin: 0 0 8px 0;
+    line-height: 1.5;
 }
 
 .project-back strong {
+    color: var(--text, #f8fafc);
     font-weight: 600;
 }
 
 .back-to-card {
-    color: var(--accent2);
+    color: var(--text-secondary, #94a3b8);
+    font-size: 0.8rem;
     margin-top: auto;
+    padding-top: 15px;
+    display: inline-block;
+}
+
+.back-to-card:hover {
+    color: var(--accent, #14b8a6);
 }
