@@ -4,6 +4,9 @@ import { faMobileAlt, faEnvelope, faPhone, faMapMarkerAlt } from '@fortawesome/f
 import { faGithub, faLinkedin, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'
 import '../styles/hero.css'
 
+// 1. Import your local profile image from your assets folder safely
+import profileImg from '../assets/profile.jpg'
+
 function Hero({ scrollToSection }) {
   const [displayText, setDisplayText] = useState('')
   const [titleIndex, setTitleIndex] = useState(0)
@@ -73,7 +76,7 @@ function Hero({ scrollToSection }) {
           <div className="hero-image">
             <div className="profile-container">
               <img
-                src="https://via.placeholder.com/300?text=Kushmi+Kaushini"
+                src={profileImg}
                 alt="Kushmi Kaushini"
               />
             </div>
