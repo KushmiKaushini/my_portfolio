@@ -85,7 +85,7 @@ function Contact() {
               </div>
               <div className="contact-text">
                 <h3>LinkedIn</h3>
-                <p><a href="https://linkedin.com/in/kushmi-kaushini" target="_blank" rel="noopener noreferrer">linkedin.com/in/kushmi-kaushini</a></p>
+                <p><a href="https://www.linkedin.com/in/kaushini-k-ekanayake-1b86b9254/" target="_blank" rel="noopener noreferrer">linkedin.com/in/kushmi-kaushini</a></p>
               </div>
             </div>
           </div>
